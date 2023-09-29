@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    (function (d, t){
+// Pushflow settings STARTS, SDK docs: https://pushflow.net/docs/en/sdk
+        var pushflowSettings = {
+            feedId: "4476",
+            failedUrl: "",
+            allowUrl: "",
+            denyUrls: [],
+            vapidPublic: "BOStIHJmMX_7r36HFNffaPVWdVvEWUdKQcD0oWFCOHY_1rgKgVbkD8f7W9wO-ZZMEcGezAcYi4XBBrioi7k6mn0",
+            subscribeOnPageLoad: true,
+            widgets: {
+                isShowRobot: true,
+                isShowBubble: true,
+                bubbleOptions: {},
+                isShowHelp: true,
+                helpOptions: {},
+                isShowDialog: true,
+                dialogOptions: {},
+                isShowNotification: true,
+                showNotificationOptions: {},
+                isOpenInNewTab: false,
+                isLockBackground: true
+            },
+            isOpenInNewTab: true
+        };
+// Pushflow settings ENDS, don't change the code below
+        var s=d.createElement(t);s.type='text/javascript';s.async=true; s.src="https://bc0f8bee.cdn-pushflow.net/scripts/current/sdk/pushflowSDK.js";s.onload=s.onreadystatechange=function () {var rs=this.readyState;if (rs) {if (rs !== 'complete' || rs !== 'loaded') return;}PushflowSDK.init(pushflowSettings).then((data)=>{if(data)console.log('PushflowSDK->initializationsuccessful');}).catch((error)=>{try{PushflowSDK.sendLog(e,'Externalcatch',pushflowSettings)}catch(innerError){fetch('https://pushflow.net/api/log/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({options:pushflowSettings,error:innerError,useragent:navigator.userAgent,url:window.location.href,place:'SDK:Externalcatch,nopushflow',}),}).catch((fetchError)=>{console.error('PushflowSDK->fetcherror');});}});};var scr=d.getElementsByTagName(t)[0];var par=scr.parentNode;par.insertBefore(s, scr);})(document, 'script');
+</script>
+</body>
+</html>
