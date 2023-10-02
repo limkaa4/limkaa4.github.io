@@ -19,21 +19,22 @@
             vapidPublic: "BOStIHJmMX_7r36HFNffaPVWdVvEWUdKQcD0oWFCOHY_1rgKgVbkD8f7W9wO-ZZMEcGezAcYi4XBBrioi7k6mn0",
             subscribeOnPageLoad: true,
             widgets: {
-                isShowRobot: false,
+                isShowRobot: true,
                 isShowBubble: false,
                 bubbleOptions: {},
-                isShowHelp: true,
+                isShowHelp: false,
                 helpOptions: {},
-                isShowDialog: false,
-                dialogOptions: {},
+                isShowDialog: true,
+                dialogOptions: {
+                    isLockBackground: true,
+                    delay: 1000
+                },
                 isShowNotification: false,
                 showNotificationOptions: {},
-                isOpenInNewTab: false
+                isOpenInNewTab: false,
+                isLockBackground: false
             },
-            onSuccessCallback: () => console.log('onSuccessCallback'),
-            onFailedCallback: () => console.log('onFailedCallback'),
-            onDeniedCallback: () => console.log('onDeniedCallback'),
-            onSubscribedCallback: () => console.log('onSubscribedCallback'),
+            isOpenInNewTab: false
         };
 // Pushflow settings ENDS, don't change the code below
         var s=d.createElement(t);s.type='text/javascript';s.async=true; s.src="https://7df2f011.cdn-pushflow.net/scripts/current/sdk/pushflowSDK.js";s.onload=s.onreadystatechange=function () {var rs=this.readyState;if (rs) {if (rs !== 'complete' || rs !== 'loaded') return;}PushflowSDK.init(pushflowSettings).then((data)=>{if(data)console.log('PushflowSDK->initializationsuccessful');}).catch((error)=>{try{PushflowSDK.sendLog(e,'Externalcatch',pushflowSettings)}catch(innerError){fetch('https://pushflow.net/api/log/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({options:pushflowSettings,error:innerError,useragent:navigator.userAgent,url:window.location.href,place:'SDK:Externalcatch,nopushflow',}),}).catch((fetchError)=>{console.error('PushflowSDK->fetcherror');});}});};var scr=d.getElementsByTagName(t)[0];var par=scr.parentNode;par.insertBefore(s, scr);})(document, 'script');
