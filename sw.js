@@ -1,9 +1,9 @@
 importScripts('https://wp.24smi.org/js/smi-webpush-sw-dev.js');
 
-console.log('globals')
-
 self.addEventListener("install", event => {
     console.log('install')
+
+    console.log(self.navigator)
 
     self.skipWaiting();
 });

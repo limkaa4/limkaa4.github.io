@@ -6,20 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://wp.24smi.org/js/smi-webpush-dev.js"></script>
 </head>
 <body>
 <h1>Web Push</h1>
 <script>
-    const SmiWebpush = window.SmiWebpush || [];
+    const scriptEl = document.createElement('script');
 
-    SmiWebpush.push(function () {
-        SmiWebpush.init({
-            projectId: "b4adc9fd-5a90-47d3-932a-0a875e53bd29",
+    scriptEl.src = './sdk.js';
+    scriptEl.async = true;
+    scriptEl.onload = function () {
+        ytrgt.webpush.init({
+            projectId: 'b4adc9fd-5a90-47d3-932a-0a875e53bd29',
+            subscribeOnPageLoad: true,
+            widgets: {
+                showDialog: true,
+            },
         });
+    };
 
-        SmiWebpush.subscribeByNativePrompt()
-    });
+    document.body.append(scriptEl);
 </script>
 </body>
 </html>
