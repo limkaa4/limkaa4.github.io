@@ -9,22 +9,24 @@
 </head>
 <body>
 <h1>Web Push</h1>
-<script>
-    const scriptEl = document.createElement('script');
-
-    scriptEl.src = './sdk.js';
-    scriptEl.async = true;
-    scriptEl.onload = function () {
-        ytrgt.webpush.init({
-            projectId: 'b4adc9fd-5a90-47d3-932a-0a875e53bd29',
-            subscribeOnPageLoad: true,
-            widgets: {
-                showDialog: true,
-            },
-        });
-    };
-
-    document.body.append(scriptEl);
-</script>
+<nav>
+    <ul>
+        <li>
+            <a href="./a.html">robot</a>
+        </li>
+        <li>
+            <a href="./b.html">dialog</a>
+        </li>
+        <li>
+            <a href="./c.html">bubble</a>
+        </li>
+        <li>
+            <a href="./d.html">captcha</a>
+        </li>
+        <li>
+            <a href="./f.html">toast</a>
+        </li>
+    </ul>
+</nav>
 </body>
 </html>
