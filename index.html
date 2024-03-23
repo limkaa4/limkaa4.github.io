@@ -8,25 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Web Push</h1>
-<nav>
-    <ul>
-        <li>
-            <a href="./a.html">robot</a>
-        </li>
-        <li>
-            <a href="./b.html">dialog</a>
-        </li>
-        <li>
-            <a href="./c.html">bubble</a>
-        </li>
-        <li>
-            <a href="./d.html">captcha</a>
-        </li>
-        <li>
-            <a href="./f.html">toast</a>
-        </li>
-    </ul>
-</nav>
+<script>
+    const searchParams = new URLSearchParams(window.location.search);
+
+    window.Adsafee = {
+        projectId: '1',
+        sub1: searchParams.get('utm_source'),
+        sub2: searchParams.get('utm_term'),
+        sub3: searchParams.get('utm_campaign'),
+        sub5: searchParams.get('utm_content'),
+    };
+    var eqSc = document.createElement('script');
+    var eqPrnt = document.getElementsByTagName('head')[0] || document.body;
+    eqSc.setAttribute('async', true);
+    eqSc.setAttribute('charset', 'utf-8');
+    eqSc.src = 'https://adsafee.com/static/partial.js';
+    eqPrnt && eqPrnt.appendChild(eqSc);
+</script>
 </body>
 </html>
