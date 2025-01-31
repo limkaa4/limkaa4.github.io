@@ -8,26 +8,28 @@
     <title>Document</title>
 </head>
 <body>
-<nav>
-    <a href="/">a</a>
-    <a href="/g.html">g</a>
-</nav>
+<script src="webpush.js"></script>
 <script>
-    const searchParams = new URLSearchParams(window.location.search);
 
-    window.Adsafee = {
-        projectId: 'limkaa4@github.io',
-        sub1: searchParams.get('utm_source'),
-        sub2: searchParams.get('utm_term'),
-        sub3: searchParams.get('utm_campaign'),
-        sub5: searchParams.get('utm_content'),
-    };
-    var eqSc = document.createElement('script');
-    var eqPrnt = document.getElementsByTagName('head')[0] || document.body;
-    eqSc.setAttribute('async', true);
-    eqSc.setAttribute('charset', 'utf-8');
-    eqSc.src = 'https://adsafee.com/static/partial.js';
-    eqPrnt && eqPrnt.appendChild(eqSc);
+    ytrgt.webpush.init({
+        projectId: "b4adc9fd-5a90-47d3-932a-0a875e53bd29",
+        subscribeOnPageLoad: true,
+        subscribeOnPageLoadDelay: 1000,
+        workerPath: "./smi-webpush-sw.js",
+        onSuccessCallback: function () {
+            console.log("Subscription was successful");
+        },
+        onFailedCallback: function () {
+            console.log('Subscription failed');
+        },
+        onDeniedCallback: function () {
+            console.log('Subscription was denied');
+        },
+        onSubscribedCallback: function () {
+            console.log('Subscription was saved on server');
+        }
+    })
+
 </script>
 </body>
 </html>
